@@ -2,12 +2,15 @@ package log.example.demo2;
 
 import java.io.*;
 
+import jakarta.inject.Inject;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 @WebServlet(name = "helloServlet", value = "/hello-servlet")
 public class HelloServlet extends HttpServlet {
     private String message;
+    @Inject
+    HelloService helloService;
 
     public void init() {
         message = "Hello World!";
@@ -20,6 +23,8 @@ public class HelloServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
         out.println("<h1>" + message + "</h1>");
+        out.println("<h1>" + helloService.createHelloMessage("from injected service") + "</h1>");
+
         out.println("</body></html>");
     }
 
