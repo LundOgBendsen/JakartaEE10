@@ -23,7 +23,7 @@ public class HelloServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
         out.println("<h1>" + message + "</h1>");
-        out.println("<h1>" + helloService.createHelloMessage("from injected service with interface 2") + "</h1>");
+        out.println("<h1>" + helloService.createHelloMessage() + "</h1>");
 
         out.println("</body></html>");
     }

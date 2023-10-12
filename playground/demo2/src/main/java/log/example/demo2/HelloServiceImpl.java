@@ -16,6 +16,8 @@
  */
 package log.example.demo2;
 
+import jakarta.inject.Inject;
+
 /**
  * A simple CDI service which is able to say hello to someone
  *
@@ -24,8 +26,10 @@ package log.example.demo2;
  */
 public class HelloServiceImpl implements HelloService {
 
-    public String createHelloMessage(String name) {
-        return "Hello " + name + "!";
+    @Inject
+    private String message;
+    public String createHelloMessage() {
+        return message;
     }
 
 }
