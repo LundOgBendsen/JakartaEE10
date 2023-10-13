@@ -1,5 +1,6 @@
 CDI1.0-Ex-HelloWorld
-Demonstrates the use of CDI in web app
+Demonstrates the use of CDI in web app.
+Built using maven and latest InteliJ version.
 
 Error during artifact deployment. See server log for details.
  Artifact CDI1.0-Ex-HelloworldWeb:war exploded: java.lang.Exception: {"WFLYCTL0080: Failed services" => {"jboss.deployment.unit.\"CDI1.0-Ex-HelloworldWeb-1.0-SNAPSHOT.war\".WeldStartService" => "Failed to start service
