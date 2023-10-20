@@ -1,6 +1,5 @@
 package dk.lundogbendsen.web;
 
-
 import jakarta.inject.Inject;
 
 public class BusinessServiceImpl implements BusinessService {
