@@ -3,7 +3,6 @@ package dk.lundogbendsen.web;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import  dk.lundogbendsen.web.BusinessService;
 import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
