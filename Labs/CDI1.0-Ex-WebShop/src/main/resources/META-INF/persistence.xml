@@ -10,10 +10,24 @@
   <exclude-unlisted-classes>false</exclude-unlisted-classes>
   <properties>
     <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
-    <!-- property name="hibernate.dialect" value="org.hibernate.dialect.DerbyTenSevenDialect"/ -->
+
     <!-- for WildFly/Hibernate -->
-    <property name="hibernate.show_sql" value="true"/>
+
+
+    <!--
+        <property name="hibernate.show_sql" value="true"/>
     <property name="hibernate.format_sql" value="true"/>
+<property name="jakarta.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver" />
+<property name="jakarta.persistence.jdbc.user" value="foo" />
+<property name="jakarta.persistence.jdbc.password" value="bar" />
+<property name="javax.persistence.jdbc.url" value="jdbc:derby:CourseDB;create=true"/>
+-->
+    <property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.ClientDriver" />
+    <property name="hibernate.connection.url" value="jdbc:derby://localhost:1527/CourseDB;create=true" />
+    <property name="hibernate.connection.username" value="foo" />
+    <property name="hibernate.connection.password" value="bar" />
+    <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect"/>
+
   </properties>
 </persistence-unit>
 </persistence>
