@@ -20,7 +20,7 @@ import dk.lundogbendsen.jpa.Product;
 @Dependent
 public class ProductLists {
 
-	@PersistenceContext
+	@PersistenceContext(unitName = "primary")
 	EntityManager em;
 
 	@Inject @LoggedIn

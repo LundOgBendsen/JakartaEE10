@@ -19,7 +19,7 @@ import dk.lundogbendsen.jpa.Customer;
 @SessionScoped
 public class CustomerLogin implements Serializable {
 
-	@PersistenceContext
+	@PersistenceContext(unitName = "primary")
 	EntityManager em;
 
 	private String name;

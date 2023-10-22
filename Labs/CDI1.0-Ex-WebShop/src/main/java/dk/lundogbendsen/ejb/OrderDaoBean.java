@@ -21,7 +21,7 @@ public class OrderDaoBean implements OrderDao {
 	TaxCalculator taxCalculator;
 
 	
-	@PersistenceContext
+	@PersistenceContext(unitName = "primary")
 	EntityManager em;
 
 	public Order createOrder(ShoppingCart shoppingCart) {

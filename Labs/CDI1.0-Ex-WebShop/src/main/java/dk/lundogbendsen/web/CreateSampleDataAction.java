@@ -14,7 +14,7 @@ import dk.lundogbendsen.jpa.Product;
 @Stateless
 public class CreateSampleDataAction {
 
-	@PersistenceContext
+	@PersistenceContext(unitName = "primary")
 	EntityManager em;
 
 	@Inject
