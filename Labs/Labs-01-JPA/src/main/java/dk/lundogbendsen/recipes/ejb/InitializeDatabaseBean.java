@@ -1,4 +1,4 @@
-package dk.lundogbendsen.ejb;
+package dk.lundogbendsen.recipes.ejb;
 
 import java.util.logging.Logger;
 
