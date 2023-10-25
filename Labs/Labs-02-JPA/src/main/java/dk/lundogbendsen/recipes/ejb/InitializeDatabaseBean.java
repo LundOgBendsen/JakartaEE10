@@ -10,25 +10,24 @@ import jakarta.persistence.PersistenceContext;
 
 import dk.lundogbendsen.recipes.model.Ingredient;
 import dk.lundogbendsen.recipes.model.MeasureUnit;
-
 @Singleton
 @Startup
 public class InitializeDatabaseBean {
-	
-	Logger log = Logger.getLogger(InitializeDatabaseBean.class.getSimpleName());	
-	
+
+	Logger log = Logger.getLogger(InitializeDatabaseBean.class.getSimpleName());
+
 	@PersistenceContext(unitName="pu")
 	EntityManager em;
-	
+
 	@PostConstruct
 	public void init() {
 		Ingredient milk = getMilk();
 		em.persist(milk);
 		log.info("Created milk: " + milk);
-		
+
 		Ingredient sugar = getSugar();
 		em.persist(sugar);
-		
+
 		Ingredient egg = getEgg();
 		em.persist(egg);
 
@@ -36,7 +35,7 @@ public class InitializeDatabaseBean {
 		em.persist(flour);
 
 //		Recipe pancakes = getPancakeRecipe();
-//		
+//
 //		RecipeIngredient milkIngredient = new RecipeIngredient();
 //		milkIngredient.setIngredient(milk);
 //		milkIngredient.setQuantity(0.3f);
@@ -61,11 +60,11 @@ public class InitializeDatabaseBean {
 //		testNamedQuery();
 	}
 
-//	private Recipe getPancakeRecipe() {
+	//	private Recipe getPancakeRecipe() {
 //		Recipe recipe = new Recipe();
 //		recipe.setName("Traditional pancakes");
 //		recipe.setPreparationTime(30);
-//		recipe.setServings(4);		
+//		recipe.setServings(4);
 //		recipe.setDescription("Blending in the flour: Put the flour and a pinch of salt into a large mixing bowl and make a well in the centre. Crack the eggs into the middle, then pour in about 50ml milk and 1 tbsp oil. Start whisking from the centre, gradually drawing the flour into the eggs, milk and oil. Once all the flour is incorporated, beat until you have a smooth, thick paste. Add a little more milk if it is too stiff to beat.");
 //		return recipe;
 //	}
