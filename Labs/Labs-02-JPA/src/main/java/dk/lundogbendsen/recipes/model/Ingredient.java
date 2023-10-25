@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 @Entity
 public class Ingredient {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Ingredient_SEQ")
 	@SequenceGenerator(name = "Ingredient_SEQ", allocationSize = 1)
 	private Long id;
 	@Column(unique = true, length = 60)

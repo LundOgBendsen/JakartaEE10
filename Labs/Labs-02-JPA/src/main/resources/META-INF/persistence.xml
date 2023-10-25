@@ -7,7 +7,7 @@
         <properties>
             <!-- Properties for JPA 3.1 -->
             <!-- INSERT PROPERTIES HERE -->
-
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
             <!-- Properties for Hibernate -->
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect" />
