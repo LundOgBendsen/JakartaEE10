@@ -7,8 +7,8 @@
         <properties>
             <!-- Properties for JPA 3.1 -->
             <!-- INSERT PROPERTIES HERE -->
-            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
-            <property name="javax.persistence.sql-load-script-source" value="META-INF/insert.sql"/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create" />
+            <property name="jakarta.persistence.sql-load-script-source" value="META-INF/insert.sql"/>
             <!-- Properties for Hibernate -->
             <property name="hibernate.show_sql" value="true" />
         </properties>

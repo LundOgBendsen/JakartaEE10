@@ -20,7 +20,7 @@ public class InitializeDatabaseBean {
 
 	@PostConstruct
 	public void init() {
-		//her kan du oprette og gemme ingredienser
+		//here you can create and save ingredients
 	}
 
 }

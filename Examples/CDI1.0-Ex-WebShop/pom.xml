@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>dk.lundogbendsen</groupId>
-    <artifactId>Labs-02-JPA</artifactId>
+    <groupId>groupId</groupId>
+    <artifactId>CDI1.0-Ex-WebShop</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>Labs-01-JPA</name>
     <packaging>war</packaging>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <jakarta.platform>10.0.0</jakarta.platform>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.9.2</junit.version>
     </properties>
 
@@ -22,7 +20,7 @@
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-web-api</artifactId>
-            <version>${jakarta.platform}</version>
+            <version>10.0.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -39,17 +37,8 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.2</version>
-            </plugin>
-        </plugins>
-    </build>
-	
-	
+
+
     <profiles>
         <profile>
             <id>mvn-deploy</id>
@@ -88,4 +77,5 @@
 
         </profile>
     </profiles>
+
 </project>
