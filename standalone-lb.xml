@@ -32,6 +32,7 @@
         <extension module="org.wildfly.extension.elytron-oidc-client"/>
         <extension module="org.wildfly.extension.health"/>
         <extension module="org.wildfly.extension.io"/>
+		<extension module="org.wildfly.extension.messaging-activemq"/>
         <extension module="org.wildfly.extension.metrics"/>
         <extension module="org.wildfly.extension.microprofile.config-smallrye"/>
         <extension module="org.wildfly.extension.microprofile.jwt-smallrye"/>
@@ -526,6 +527,41 @@
             <client-config name="Standard-Client-Config"/>
         </subsystem>
         <subsystem xmlns="urn:jboss:domain:weld:5.0"/>
+		
+		 <subsystem xmlns="urn:jboss:domain:messaging-activemq:15.0">
+            <server name="default">
+                <security elytron-domain="ApplicationDomain"/>
+                <statistics enabled="${wildfly.messaging-activemq.statistics-enabled:${wildfly.statistics-enabled:false}}"/>
+                <security-setting name="#">
+                    <role name="guest" send="true" consume="true" create-non-durable-queue="true" delete-non-durable-queue="true"/>
+                </security-setting>
+                <address-setting name="#" dead-letter-address="jms.queue.DLQ" expiry-address="jms.queue.ExpiryQueue" max-size-bytes="10485760" page-size-bytes="2097152" message-counter-history-day-limit="10"/>
+                <http-connector name="http-connector" socket-binding="http" endpoint="http-acceptor"/>
+                <http-connector name="http-connector-throughput" socket-binding="http" endpoint="http-acceptor-throughput">
+                    <param name="batch-delay" value="50"/>
+                </http-connector>
+                <in-vm-connector name="in-vm" server-id="0">
+                    <param name="buffer-pooling" value="false"/>
+                </in-vm-connector>
+                <http-acceptor name="http-acceptor" http-listener="default"/>
+                <http-acceptor name="http-acceptor-throughput" http-listener="default">
+                    <param name="batch-delay" value="50"/>
+                    <param name="direct-deliver" value="false"/>
+                </http-acceptor>
+                <in-vm-acceptor name="in-vm" server-id="0">
+                    <param name="buffer-pooling" value="false"/>
+                </in-vm-acceptor>
+                <jms-queue name="ExpiryQueue" entries="java:/jms/queue/ExpiryQueue"/>
+                <jms-queue name="DLQ" entries="java:/jms/queue/DLQ"/>
+				  <jms-queue name="testQueue" entries="java:/jms/queue/test java:jboss/exported/jms/queue/test"/>
+                <jms-topic name="testTopic" entries="java:/jms/topic/test java:jboss/exported/jms/topic/test"/>
+              
+                <connection-factory name="InVmConnectionFactory" entries="java:/ConnectionFactory" connectors="in-vm"/>
+                <connection-factory name="RemoteConnectionFactory" entries="java:jboss/exported/jms/RemoteConnectionFactory" connectors="http-connector"/>
+                <pooled-connection-factory name="activemq-ra" entries="java:/JmsXA java:jboss/DefaultJMSConnectionFactory" connectors="in-vm" transaction="xa"/>
+            </server>
+        </subsystem>
+		
     </profile>
     <interfaces>
         <interface name="management">
@@ -547,9 +583,4 @@
             <remote-destination host="${jboss.mail.server.host:localhost}" port="${jboss.mail.server.port:25}"/>
         </outbound-socket-binding>
     </socket-binding-group>
-    <deployments>
-        <deployment name="CDI1.0-Ex-WebShop-1.0-SNAPSHOT.war" runtime-name="CDI1.0-Ex-WebShop-1.0-SNAPSHOT.war">
-            <fs-archive path="C:\Users\sinis\projects\JakartaEE\course-repo\Labs\CDI1.0-Ex-WebShop\target\CDI1.0-Ex-WebShop-1.0-SNAPSHOT.war"/>
-        </deployment>
-    </deployments>
 </server>
