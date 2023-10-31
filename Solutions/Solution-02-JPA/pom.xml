@@ -10,7 +10,6 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>dk.lundogbendsen</groupId>
     <artifactId>Labs-02-JPA-JPA</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>Labs-01-JPA</name>

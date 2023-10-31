@@ -10,7 +10,6 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>groupId</groupId>
     <artifactId>CDI1.0-Ex-WebShop</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>

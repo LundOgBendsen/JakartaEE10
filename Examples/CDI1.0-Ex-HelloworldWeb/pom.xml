@@ -10,7 +10,6 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>lundogbendsen</groupId>
     <artifactId>CDI1.0-Ex-HelloworldWeb</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>CDI1.0-Ex-HelloworldWeb</name>
