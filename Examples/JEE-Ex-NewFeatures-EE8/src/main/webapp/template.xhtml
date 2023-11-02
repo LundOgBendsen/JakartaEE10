@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view contentType="text/html" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<html>
+<h:head>
+	<title>CDI example</title>
+	<style type="text/css">
+.menu {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.menu li {
+	float: left;
+	padding: 10px;
+	background-color: #f0f0f0;
+	height: 26px;
+}
+
+.contentDiv {
+	padding-top: 10px;
+	clear: both;
+}
+
+a {
+	color: rgb(50, 95, 164);
+}
+
+.lbTable {
+	background-color: #f0f0f0;
+	width: 700px;
+}
+
+.lbTable td, .lbTable th {
+	text-align: left;
+}
+
+.lbEven {
+	background-color: #e0e0e0;
+}
+</style>
+</h:head>
+<h:body>
+
+	<h:form>
+
+
+		<input type="hidden" name="cid" value="#{conv.id}" />
+
+		<div>
+			<ul class="menu">
+				<li><h:link outcome="/index.xhtml" value="Welcome">
+						<c:if test="#{not empty conv.id}">
+							<f:param name="cid" value="#{conv.id}" />
+						</c:if>
+					</h:link></li>
+				<li><h:link outcome="/products.xhtml" value="Product list">
+						<c:if test="#{not empty conv.id}">
+							<f:param name="cid" value="#{conv.id}" />
+						</c:if>
+					</h:link></li>
+				<li><h:link outcome="/shoppingcart.xhtml" value="Shopping cart"
+						rendered="#{conv.running}">
+						<c:if test="#{not empty conv.id}">
+							<f:param name="cid" value="#{conv.id}" />
+						</c:if>
+					</h:link> <h:outputText value="Shopping cart" rendered="#{not conv.running}" /></li>
+				<li><h:link outcome="/wishlist.xhtml" value="My wish list"
+						rendered="#{customerLogin.loggedIn}">
+						<c:if test="#{not empty conv.id}">
+							<f:param name="cid" value="#{conv.id}" />
+						</c:if>
+					</h:link></li>
+				<li><h:outputLabel value="Customer name:"
+						for="customerNameInput" /> <h:inputText
+						value="#{customerLogin.name}" id="customerNameInput" /> <h:commandButton
+						value="Login" action="#{customerLogin.login()}"
+						rendered="#{not customerLogin.loggedIn}" /> <h:commandButton
+						value="(Re)login" action="#{customerLogin.login}"
+						rendered="#{customerLogin.loggedIn}" /></li>
+
+
+
+			</ul>
+		</div>
+		<hr style="clear: both;" />
+		<div class="contentDiv">
+			<h:messages />
+			<ui:insert name="body" />
+		</div>
+		<hr style="clear: both;" />
+
+		<div>
+			<h2>Conversation?</h2>
+			<h:panelGrid columns="1">
+				<h:outputText value="Conversation running? #{conv.running}" />
+				<h:outputText value="Conversation id: #{conv.id}"
+					rendered="#{conv.running}" />
+				<h:commandButton value="begin" action="#{conv.begin}"
+					rendered="#{not conv.running}" />
+				<h:commandButton value="end" action="#{conv.end}"
+					rendered="#{conv.running}" />
+			</h:panelGrid>
+		</div>
+		<hr style="clear: both;" />
+
+		<div>
+			<p>
+				<i>Copyright &copy; <a href="http://www.lundogbendsen.dk">Lund&amp;Bendsen
+						A/S</a></i>
+			</p>
+		</div>
+	</h:form>
+</h:body>
+	</html>
+</f:view>
