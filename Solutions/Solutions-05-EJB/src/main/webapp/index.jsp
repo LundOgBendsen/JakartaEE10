@@ -7,6 +7,6 @@
 <body>
 
 	<p>Check the console to see how JPA creates tables and inserts data.</p>
-
+    <a href="./RecipeServlet">RecipeServlet</a>
 </body>
 </html>
