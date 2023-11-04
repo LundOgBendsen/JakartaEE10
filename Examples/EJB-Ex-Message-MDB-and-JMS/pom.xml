@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>lundogbendsen</groupId>
+        <artifactId>examples</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>EJB-Ex-Message-MDB-and-JMS</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>EJB-Ex-Message-MDB-and-JMS</name>
+    <packaging>war</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.jms</groupId>
+            <artifactId>jakarta.jms-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>client-build</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.wildfly</groupId>
+                    <artifactId>wildfly-naming-client</artifactId>
+                    <version>2.0.1.Final</version>
+                </dependency>
+
+                <!-- https://mvnrepository.com/artifact/org.jboss/jboss-ejb-client -->
+                <dependency>
+                    <groupId>org.jboss</groupId>
+                    <artifactId>jboss-ejb-client</artifactId>
+                    <version>5.0.5.Final</version>
+                </dependency>
+
+                <!-- https://mvnrepository.com/artifact/jakarta.jms/jakarta.jms-api -->
+
+                <!-- https://mvnrepository.com/artifact/org.apache.activemq/artemis-jms-client -->
+                <dependency>
+                    <groupId>org.apache.activemq</groupId>
+                    <artifactId>artemis-jms-client</artifactId>
+                    <version>2.31.2</version>
+                </dependency>
+
+                <!-- https://mvnrepository.com/artifact/javax.jms/javax.jms-api -->
+                <dependency>
+                    <groupId>javax.jms</groupId>
+                    <artifactId>javax.jms-api</artifactId>
+                    <version>2.0.1</version>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
+</project>
