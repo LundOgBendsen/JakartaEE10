@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:ui="jakarta.faces.html">
+
+<h:head>
+
+</h:head>
+
+<h:body>
+	<h1>Ingredients</h1>
+	<h:form>
+
+		<h:messages globalOnly="true" />
+
+		<h:dataTable value="#{ingredientListViewBean.ingredients}" var="i">
+			<h:column>
+				<f:facet name="header">Id</f:facet>
+				<h:outputText value="#{i.id}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Name</f:facet>
+				<h:outputText value="#{i.name}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Unit</f:facet>
+				<h:outputText value="#{i.unit}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Calories</f:facet>
+				<h:outputText value="#{i.calories}" />
+			</h:column>
+		</h:dataTable>
+		<hr />
+		<h2>Create a new Ingredient</h2>
+		<table>
+			<tr>
+				<td>Name</td>
+				<td><h:inputText value="#{ingredientListViewBean.current.name}" /></td>
+			</tr>
+			<tr>
+				<td>Unit</td>
+				<td><h:selectOneMenu
+						value="#{ingredientListViewBean.current.unit}">
+						<f:selectItems value="#{ingredientListViewBean.units}" />
+					</h:selectOneMenu></td>
+			</tr>
+			<tr>
+				<td>Calories pr unit</td>
+				<td>					
+						<h:inputText id="cal"
+							value="#{ingredientListViewBean.current.calories}">
+							<f:converter converterId="javax.faces.Double" />
+						</h:inputText> 
+						<h:messages for="cal" /> 					
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><h:commandButton
+						actionListener="#{ingredientListViewBean.create}" value="Create" />
+				</td>
+			</tr>
+		</table>
+	</h:form>
+</h:body>
+</html>
