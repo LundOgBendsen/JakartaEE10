@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>CDI2.0-Ex-Interceptors</artifactId>
+    <artifactId>CDI-Ex-Qualifier</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 

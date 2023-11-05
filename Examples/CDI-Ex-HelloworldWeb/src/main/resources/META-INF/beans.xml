@@ -1,4 +1,4 @@
-<!-- Marker file indicating CDI 1.0 should be enabled -->
+<!-- Marker file indicating CDI should be enabled -->
 
 <beans xmlns="https://jakarta.ee/xml/ns/jakartaee"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

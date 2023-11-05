@@ -1,4 +1,4 @@
-CDI2.0-Ex-Scopes
+CDI-Ex-Scopes
 
 Demonstrates different scopes.
 
@@ -15,7 +15,7 @@ Or
 mvn install -P mvn-deploy
 '''
 
-Then open a browser and go to: http://localhost:8080/CDI2.0-Ex-Scopes-1.0-SNAPSHOT/index.html
+Then open a browser and go to: http://localhost:8080/CDI-Ex-Scopes-1.0-SNAPSHOT/index.html
 
 Try refreshing. Observe the counter.
 Try opening the URL in a different browser. Watch how a SessionScoped class behave.

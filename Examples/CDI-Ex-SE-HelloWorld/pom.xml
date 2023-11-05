@@ -5,10 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
 
+
+
     <groupId>lundogbendsen</groupId>
-    <artifactId>CDI2.0-Ex-SE-EventSystem</artifactId>
+    <artifactId>CDI-Ex-SE-HelloWorld</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>CDI2.0-Ex-SE-EventSystem</name>
+    <name>CDI-Ex-SE-HelloWorld</name>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -26,5 +28,4 @@
         </dependency>
 
     </dependencies>
-
 </project>

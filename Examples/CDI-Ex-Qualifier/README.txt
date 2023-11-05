@@ -1,4 +1,4 @@
-CDI2.0-Ex-Qualifier
+CDI-Ex-Qualifier
 
 Demonstrates the use of CDI Qualifier annotations.
 
