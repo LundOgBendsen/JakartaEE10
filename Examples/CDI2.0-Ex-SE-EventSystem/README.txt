@@ -7,7 +7,7 @@ mvn clean install
 
 
 How to run:
-Run the class: src/main/java/dk/lundogbendsen/cdi/HelloCDI.java
+Run the class: src/main/java/dk/lundogbendsen/cdi/Main.java
 as a Java Application. See console output.
 
 
