@@ -1,7 +1,6 @@
 JAX-RS-ex-Hello-World
-Demonstrates the use of CDI in web app.
-Built using maven and latest IntelliJ version.
 
+Demonstrate basic server side JAX-RS
 
 Run:
 mvn install -P mvn-deploy
