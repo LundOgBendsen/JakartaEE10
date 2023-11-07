@@ -21,6 +21,8 @@ import jakarta.ws.rs.core.Context;
 
 @Path("/courses")
 public class CourseResource {
+	@Context
+	ServletContext servletContext;
 	private Map<String, CourseDescription> courses = new HashMap<String, CourseDescription>();
 
 	public CourseResource() {
@@ -51,8 +53,7 @@ public class CourseResource {
 		return String.format("Course: %s, %s, %s days", courseDescription.getId(), courseDescription.getName(), courseDescription.getDuration());
 	}
 
-	@Context
-	ServletContext servletContext;
+
 
 	@GET
 	@Path("{id}")
