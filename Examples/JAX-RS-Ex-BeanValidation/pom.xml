@@ -10,25 +10,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>JAX-RS-Ex-AsyncProcessing</artifactId>
+    <artifactId>JAX-RS-Ex-BeanValidation</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>JAX-RS-Ex-AsyncProcessing</name>
+    <name>JAX-RS-Ex-BeanValidation</name>
     <packaging>war</packaging>
-
-    <dependencies>
-        <!-- https://mvnrepository.com/artifact/jakarta.xml.bind/jakarta.xml.bind-api -->
-        <dependency>
-            <groupId>jakarta.xml.bind</groupId>
-            <artifactId>jakarta.xml.bind-api</artifactId>
-            <version>4.0.1</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/jakarta.ws.rs/jakarta.ws.rs-api -->
-        <dependency>
-            <groupId>jakarta.ws.rs</groupId>
-            <artifactId>jakarta.ws.rs-api</artifactId>
-            <version>3.1.0</version>
-        </dependency>
-    </dependencies>
 
     <profiles>
         <profile>
@@ -53,5 +38,4 @@
             </dependencies>
         </profile>
     </profiles>
-
 </project>
