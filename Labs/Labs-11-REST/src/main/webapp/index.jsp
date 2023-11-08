@@ -14,7 +14,7 @@
 			<a href="./resources/ingredients">All ingredients</a>
 		</li>
 		<li>
-			<a href="./resources/ingredients/1">Ingreditent with id=1</a>
+			<a href="./resources/ingredients/1">Ingredient with id=1</a>
 		</li>
 	</ul>
 
