@@ -1,6 +1,8 @@
-Labs-01-JPA
+Solution project for Labs-02-JPA
 
-Deploy the application and watch the console output. Tables should be 
-created and data inserted. 
+To run:
+1. Make sure Wildfly is running.
+2. mvn install -P mvn-deploy
 
+Watch the server console to see output from deployment and data initialisation.
  

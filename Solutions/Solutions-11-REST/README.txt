@@ -1,4 +1,4 @@
-Work project for Labs-11-REST
+Solution for Labs-11-REST
 
 To run:
 1. Make sure Wildfly is running.
@@ -6,6 +6,6 @@ To run:
 
 
 Watch server console. Are there any errors?
-Otherwise go to: http://localhost:8080/Labs-11-REST-1.0-SNAPSHOT/index.jsp
+Otherwise go to: http://localhost:8080/Solutions-11-REST-1.0-SNAPSHOT/index.jsp
 
  
