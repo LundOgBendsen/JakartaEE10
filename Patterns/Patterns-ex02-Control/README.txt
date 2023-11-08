@@ -1,14 +1,14 @@
-Patterns-ex01-Boundary
+Patterns-ex02-Control
 
 Demonstrate the Boundary Java EE Pattern
 
 See
-- dk.universitet.adm.indskrivning.boundary.Indskrivning a boundary class
-- dk/lundogbendsen/model/Person.java
+- dk.universitet.adm.indskrivning.boundary.Indskrivning a control class
+- dk/lundogbendsen/model/Studerende.java
 
 How to run:
 Deploy to the server. A welcome page will be shown.
 
 URL: 
-http://localhost:8080/Patterns-ex01-Boundary/
+http://localhost:8080/Patterns-ex02-Control/
 

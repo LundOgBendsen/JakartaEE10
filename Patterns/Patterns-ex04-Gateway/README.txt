@@ -1,14 +1,15 @@
-Patterns-ex03-Entity
+Patterns-ex04-Gateway
 
-Demonstrate the Entity Java EE Pattern
+Demonstrate the Gateway Java EE Pattern
 
 See
-- dk.universitet.adm.indskrivning.entity.Studerende is a rich entity class. Note the
-indskriv()-method.
+- dk.universitet.adm.indskrivning.boundary.StuderendeGateway is a gateway wrapping
+a Studerende entity.
 
 How to run:
-Deploy to the server. A welcome page will be shown.
+Deploy to the server. A welcome page will be shown. Press f5 to update a number of
+times.
 
-URL: 
-http://localhost:8080/Patterns-ex03-Entity/
+URL:
+http://localhost:8080/Patterns-ex04-Gateway/
 
