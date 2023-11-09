@@ -1,4 +1,4 @@
-CDI-Ex-HelloWorld
+JAX-RS-ex-JSON
 
 Demonstrate basic server side JAX-RS with json
 
