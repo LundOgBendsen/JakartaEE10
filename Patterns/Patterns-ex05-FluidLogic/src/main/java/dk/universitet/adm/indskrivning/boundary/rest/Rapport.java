@@ -4,12 +4,14 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.util.List;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
 import javax.script.Bindings;
 import javax.script.ScriptEngine;
+import javax.script.ScriptEngineFactory;
 import javax.script.ScriptEngineManager;
 import jakarta.ws.rs.FormParam;
 import jakarta.ws.rs.POST;
@@ -24,10 +26,10 @@ import dk.universitet.adm.indskrivning.control.IndskrivningDAO;
 @Path("rapport/")
 public class Rapport {
 	//FluidLogic: vi scripter med JavaScript - det eneste sprog der skal være understøttet.
-	private static final String ENGINE_NAME = "JavaScript";
+	private static final String ENGINE_NAME = "javascript";
 	private ScriptEngine scriptEngine = null;
 	private final static String header = "<html><body><h1>Resultat</h1><p>";
-	private final static String footer = "</p><p><a href=\"/Patterns-ex05-FluidLogic/rapport.xhtml\">Tilbage</a></p></body></html>";
+	private final static String footer = "</p><p><a href=\"/Patterns-ex05-FluidLogic-1.0-SNAPSHOT/rapport.xhtml\">Tilbage</a></p></body></html>";
 	
 	@Inject
 	IndskrivningDAO dao;
@@ -36,6 +38,11 @@ public class Rapport {
 	public void initScripting() {
 		//FluidLogic: opret en JSR-223 ScriptEngine
 		ScriptEngineManager engineManager = new ScriptEngineManager();
+		List<ScriptEngineFactory> f = engineManager.getEngineFactories();
+		for (ScriptEngineFactory sef : f) {
+			System.out.println(sef.getEngineName());
+		}
+
 		this.scriptEngine = engineManager.getEngineByName(ENGINE_NAME);
 	}
 
