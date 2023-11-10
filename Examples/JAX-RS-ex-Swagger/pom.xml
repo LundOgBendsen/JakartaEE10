@@ -59,17 +59,6 @@
                     <version>6.2.1.Final</version>
                 </dependency>
                 <!-- https://mvnrepository.com/artifact/jakarta.json.bind/jakarta.json.bind-api -->
-                <dependency>
-                    <groupId>jakarta.json.bind</groupId>
-                    <artifactId>jakarta.json.bind-api</artifactId>
-                    <version>3.0.0</version>
-                </dependency>
-                <!-- https://mvnrepository.com/artifact/org.eclipse/yasson -->
-                <dependency>
-                    <groupId>org.eclipse</groupId>
-                    <artifactId>yasson</artifactId>
-                    <version>3.0.3</version>
-                </dependency>
 
 
 
