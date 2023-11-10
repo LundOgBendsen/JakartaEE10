@@ -18,7 +18,7 @@ public class Product {
     private double price;
 
     @JsonbTransient
-    private String profit;
+    private Double profit;
 
     public Integer getId() {
         return id;
@@ -44,11 +44,11 @@ public class Product {
         this.price = price;
     }
 
-    public String getProfit() {
+    public Double getProfit() {
         return profit;
     }
 
-    public void setProfit(String profit) {
+    public void setProfit(Double profit) {
         this.profit = profit;
     }
 }
