@@ -8,7 +8,7 @@ mvn install -P mvn-deploy
 
 To run client:
 mvn install -P client-build
-Reload dependencies
+Reload dependencies (maven menu reload projects)
 Run RestClient
 
 See:
