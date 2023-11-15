@@ -1,0 +1,18 @@
+<job id="stockTxJob" xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="1.0">
+  <step id="csvToDbStep">
+    <listeners>
+      <listener ref="myStepListener" />
+      <listener ref="myChunkListener" />
+      <listener ref="myReadListener" />
+      <listener ref="myProcessListener" />
+      <listener ref="myWriteListener" />
+    </listeners>
+    
+    <chunk item-count="2">
+      <reader ref="stockTxReader" />
+      <processor ref="stockTxProcessor" />
+      <writer ref="stockTxWriter" />
+    </chunk>
+  </step>
+</job>
+
