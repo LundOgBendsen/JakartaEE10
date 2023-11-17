@@ -14,7 +14,7 @@ import dk.lundogbendsen.batch.recipes.validation.DecimalValid;
 		@NamedQuery(name = "Ingredient.findByName", query = "SELECT i FROM Ingredient i WHERE i.name = :name") })
 public class Ingredient {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue
 	private Long id;
 	@Column(unique = true, length = 60)
 	@NotNull
