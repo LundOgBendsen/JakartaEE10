@@ -28,3 +28,4 @@ target/
 .settings/
 .DS_Store
 
+.metadata
