@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Cockpit demo</title>
+
+<!-- Bootstrap core CSS -->
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="./jumbotron.css" rel="stylesheet">
+
+<script src="websocket.js"></script>
+<script>
+function makeRequest()
+{
+	var xmlhttp;
+	xmlhttp=new XMLHttpRequest();
+	xmlhttp.open("GET","./resources/items/create",true);
+	xmlhttp.send();
+}
+function makeRequest1()
+{
+	var xmlhttp;
+	xmlhttp=new XMLHttpRequest();
+	xmlhttp.open("GET","./resources/items/all",true);
+	xmlhttp.send();
+}
+</script>
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="header clearfix">
+			<nav>
+				<ul class="nav nav-pills pull-right">
+					<li role="presentation" class="active"><a href="#">Home</a></li>
+				</ul>
+			</nav>
+			<h3 class="text-muted">CDI events + Web Sockets Demo</h3>
+		</div>
+
+		<div class="jumbotron">
+			<h1>Cockpit</h1>
+			<p class="lead">From here you can monitor your application.</p>
+
+
+		</div>
+
+		<div class="row marketing">
+			<div class="col-lg-6">
+				<h4>Trig a business event</h4>
+				<p>The buttons below will invoke business functionality.
+					Something will happen on the server!</p>
+				<p>
+					<a class="btn btn-lg btn-success" onclick="makeRequest()" role="button">Create
+						entity</a>
+					<a class="btn btn-lg btn-danger" onclick="makeRequest1()" role="button">Find
+						(unstable)</a>
+				</p>
+			</div>
+
+			<div class="col-lg-6">
+				<h4>Transaction log</h4>
+				<p>The transaction log is shown below. Data is pushed from server using web sockets.</p>
+				<div id="transactionLog"></div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<p>&copy; Lund&amp;Bendsen</p>
+		</footer>
+
+	</div>
+	<!-- /container -->
+
+</body>
+</html>
