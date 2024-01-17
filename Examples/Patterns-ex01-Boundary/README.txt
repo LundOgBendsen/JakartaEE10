@@ -7,7 +7,7 @@ See
 - dk/lundogbendsen/model/Person.java
 
 How to run:
-Deploy to the server. A welcome page will be shown.
+* mvn install -P mvn-deploy
 
 URL: 
 http://localhost:8080/Patterns-ex01-Boundary-1.0-SNAPSHOT/
