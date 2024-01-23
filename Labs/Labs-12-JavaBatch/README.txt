@@ -1,8 +1,14 @@
-JavaBatch-Ex-Batch
+Labs-12-JavaBatch
 
-Demonstrates the use of JavaBatch from af Servlet
+Labs project for Batch lab.
 
-How to run:
-Run the project on the server. Eclipse's browser will
-display the welcome page. Use the links from there.  
+To run:
+1. Make sure Wildfly is running.
+2. mvn install -P mvn-deploy
 
+Watch server console. Are there any errors?
+Otherwise go to: http://localhost:8080/Labs-12-JavaBatch-1.0-SNAPSHOT/index.jsp
+Here you can see ingredients and start batch jobs.
+
+
+ 
