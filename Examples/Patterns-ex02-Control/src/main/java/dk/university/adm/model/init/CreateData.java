@@ -22,31 +22,31 @@ public class CreateData {
 	
 	@PostConstruct
 	public void init() {
-		Studyboard datalogiSN = new Studyboard();
-		datalogiSN.setCode("CS");
-		datalogiSN.setName("Computer Science");
-		
+		Studyboard csSB = new Studyboard();
+		csSB.setCode("CS");
+		csSB.setName("Computer Science");
+
 		Subject algorithms = new Subject();
 		algorithms.setCampus("North");
 		algorithms.setEctsPoints(7.5);
 		algorithms.setName("Algorithms and data structures");
-		algorithms.setStudienaevn(datalogiSN);
-		datalogiSN.getFag().add(algorithms);
-		
+		algorithms.setStudienaevn(csSB);
+		csSB.getFag().add(algorithms);
+
 		Student james = new Student();
 		james.setFirstName("James");
 		james.setLastName("Gosling");
 		james.setCpr("1212121213");
 		james.setStudentnumber("123456");
-		james.getFag().add(algorithms);
+		james.getSubject().add(algorithms);
 		algorithms.getStuderende().add(james);
-		
+
 		Address addr = new Address();
 		addr.setNumber("14");
 		addr.setFloor("1");
 		addr.setZip(9000);
 		addr.setStreet("Slotsgade");
-		james.setAdresse(addr);
+		james.setAddress(addr);
 		em.persist(james);
 		log.info("Data created");
 	}

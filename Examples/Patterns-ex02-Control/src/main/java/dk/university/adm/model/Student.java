@@ -60,19 +60,19 @@ public class Student {
 		this.studentnumber = studentnumber;
 	}
 
-	public List<Subject> getFag() {
+	public List<Subject> getSubject() {
 		return subject;
 	}
 
-	public void setFag(List<Subject> subject) {
+	public void setSubject(List<Subject> subject) {
 		this.subject = subject;
 	}
 	
-	public Address getAdresse() {
+	public Address getAddress() {
 		return address;
 	}
 
-	public void setAdresse(Address address) {
+	public void setAddress(Address address) {
 		this.address = address;
 	}
 
