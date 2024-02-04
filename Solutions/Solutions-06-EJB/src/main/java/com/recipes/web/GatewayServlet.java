@@ -39,7 +39,8 @@ public class GatewayServlet extends HttpServlet {
 		out.print("<body>");
 		out.print("<h1>Creating bread recipe via Gateway</h1>");
 		Recipe bread = new Recipe();
-		bread.setName("Wheat Bread");
+		//name has to be unique so we add a timestamp to be able to create multiple recipes
+		bread.setName("Wheat Bread v." + System.currentTimeMillis());
 		bread.setPreparationTime(120);
 		bread.setCategory(Category.LUNCH);
 		bread.setServings(10);
@@ -69,7 +70,7 @@ public class GatewayServlet extends HttpServlet {
 	
 	private Ingredient getWater() {
 		Ingredient water = new Ingredient();
-		water.setName("Water");
+		water.setName("Water v." + System.currentTimeMillis());
 		water.setUnit(MeasureUnit.L);
 		water.setCalories(0);
 		return water;
@@ -77,7 +78,7 @@ public class GatewayServlet extends HttpServlet {
 	
 	private Ingredient getYaest() {
 		Ingredient yaest = new Ingredient();
-		yaest.setName("Yaest");
+		yaest.setName("Yaest v." + System.currentTimeMillis());
 		yaest.setUnit(MeasureUnit.Gr);
 		yaest.setCalories(2);
 		return yaest;

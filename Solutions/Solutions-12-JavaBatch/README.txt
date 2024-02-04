@@ -1,8 +1,12 @@
-JavaBatch-Ex-Batch
+Solutions-12-JavaBatch
 
-Demonstrates the use of JavaBatch from af Servlet
+To run:
+1. Make sure Wildfly is running.
+2. mvn install -P mvn-deploy
 
-How to run:
-Run the project on the server. Eclipse's browser will
-display the welcome page. Use the links from there.  
+Watch server console. Are there any errors?
+Otherwise go to: http://localhost:8080/Solutions-12-JavaBatch-1.0-SNAPSHOT/index.jsp
+Here you can see ingredients and start batch jobs.
 
+
+ 

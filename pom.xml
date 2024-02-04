@@ -35,6 +35,11 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+		 <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>4.0.1</version>
+        </dependency>
     </dependencies>
 
     <build>

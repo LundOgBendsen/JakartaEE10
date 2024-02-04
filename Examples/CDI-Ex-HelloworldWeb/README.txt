@@ -1,4 +1,4 @@
-CDI-Ex-HelloWorld
+CDI-Ex-HelloWorldWeb
 
 Demonstrates the use of CDI in web app.
 

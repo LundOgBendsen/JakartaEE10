@@ -8,7 +8,8 @@
 
 <p>See this JSF-page: <a href="./list-ingredients.jsf">./list-ingredients.jsf</a></p>
 
-<p>REST resources 
+<h2>REST resources</h2>
+<p>
 	<ul>
 		<li>
 			<a href="./resources/ingredients">All ingredients</a>
@@ -17,6 +18,6 @@
 			<a href="./resources/ingredients/1">Ingredient with id=1</a>
 		</li>
 	</ul>
-
+</p>
 </body>
 </html>

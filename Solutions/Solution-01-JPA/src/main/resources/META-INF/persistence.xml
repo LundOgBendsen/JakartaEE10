@@ -11,6 +11,7 @@
             <property name="jakarta.persistence.sql-load-script-source" value="META-INF/insert.sql"/>
             <!-- Properties for Hibernate -->
             <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect" />
         </properties>
     </persistence-unit>
 </persistence>
