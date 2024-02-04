@@ -27,9 +27,6 @@ public class AsyncTask extends Task {
                 .thenApply((r) -> {
                     return ", step 2";
                 })
-                .thenApplyAsync((r) -> {
-                    return r + ", step 3";
-                }, mExecService) // explicitly specify exec service
                 .thenApply((r) -> {
                     if (new Random().nextBoolean()) // generate error with 50% probability
                         return r;
@@ -48,5 +45,6 @@ public class AsyncTask extends Task {
                     return null;
                 });
     }
-
  }
+
+
