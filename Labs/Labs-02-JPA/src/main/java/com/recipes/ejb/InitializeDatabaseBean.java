@@ -1,4 +1,4 @@
-package dk.lundogbendsen.recipes.ejb;
+package com.recipes.ejb;
 
 import java.util.logging.Logger;
 
@@ -8,8 +8,8 @@ import jakarta.ejb.Startup;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
-import dk.lundogbendsen.recipes.model.Ingredient;
-import dk.lundogbendsen.recipes.model.MeasureUnit;
+import com.recipes.model.Ingredient;
+import com.recipes.model.MeasureUnit;
 @Singleton
 @Startup
 public class InitializeDatabaseBean {
