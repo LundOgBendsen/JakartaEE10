@@ -1,9 +1,10 @@
-package dk.lundogbendsen.recipes.ejb;
+package com.recipes.ejb;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.logging.Logger;
 
+import com.recipes.model.Ingredient;
 import jakarta.annotation.PostConstruct;
 import jakarta.ejb.Singleton;
 import jakarta.ejb.Startup;
@@ -11,10 +12,9 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
 
-import dk.lundogbendsen.recipes.model.Ingredient;
-import dk.lundogbendsen.recipes.model.MeasureUnit;
-import dk.lundogbendsen.recipes.model.Recipe;
-import dk.lundogbendsen.recipes.model.RecipeIngredient;
+import com.recipes.model.MeasureUnit;
+import com.recipes.model.Recipe;
+import com.recipes.model.RecipeIngredient;
 
 @Singleton
 @Startup

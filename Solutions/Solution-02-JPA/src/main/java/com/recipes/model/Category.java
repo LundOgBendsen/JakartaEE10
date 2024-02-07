@@ -1,4 +1,4 @@
-package dk.lundogbendsen.recipes.model;
+package com.recipes.model;
 
 public enum Category {
 	BREAKFAST, LUNCH, SNACK, STARTER, MAIN_COURSE, DESERT;

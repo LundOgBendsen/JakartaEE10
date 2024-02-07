@@ -1,4 +1,4 @@
-package dk.lundogbendsen.recipes.model;
+package com.recipes.model;
 
 import java.util.Date;
 import java.util.HashSet;
