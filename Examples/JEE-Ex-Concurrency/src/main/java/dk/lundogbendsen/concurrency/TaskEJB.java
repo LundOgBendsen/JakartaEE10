@@ -3,6 +3,7 @@ package dk.lundogbendsen.concurrency;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import jakarta.annotation.Resource;
+import jakarta.ejb.AccessTimeout;
 import jakarta.ejb.LocalBean;
 import jakarta.ejb.Singleton;
 import jakarta.ejb.Startup;
@@ -60,7 +61,8 @@ public class TaskEJB {
         mExecService.shutdownNow();
         sExecService.shutdownNow();
     }
-    
+
+    @AccessTimeout(value = 60, unit = TimeUnit.SECONDS)
     public void submitTask(String taskName, String type) throws ExecutionException, InterruptedException {
         Task task;
         Supplier<String> asyncTask = ()->{
@@ -85,7 +87,7 @@ public class TaskEJB {
                     periodicTasks.put(taskName, fut);
                 }
                 break;
-            case "RUN_ASYNC":
+            case "ASYNC":
                 task = new AsyncTask(taskName);
                 mExecService.submit(task); // we can also call directly task.run(); what is the difference?
         }

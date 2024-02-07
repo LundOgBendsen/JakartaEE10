@@ -12,7 +12,7 @@ import java.util.Calendar;
 /* The tasks just notify the JAX-RS web service in the EJB */
 public abstract class Task implements Runnable {
     private static final String WS_URL =
-            "http://localhost:8080/taskcreator/jaxrs/taskinfo";
+            "http://localhost:8080/JEE-Ex-Concurrency-1.0-SNAPSHOT/jaxrs/taskinfo";
 
     private final String name;
     private final String type;
