@@ -1,4 +1,4 @@
-package dk.lundogbendsen.recipes.model;
+package com.recipes.model;
 
 public enum MeasureUnit {
 	KG("Kilo"), L("Liter"), Gr("Gram"), Dl("Deci liter"), TableSpoon("Table spoon"), TeaSpoon("Tea Spoon"), Pcs("Pieces");
