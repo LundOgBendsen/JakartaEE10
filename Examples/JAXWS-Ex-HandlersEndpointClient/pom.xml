@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>lundogbendsen</groupId>
+        <artifactId>examples</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>JAXWS-Ex-HelloWorldClient</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>JAXWS-Ex-HelloWorldClient</name>
+    <packaging>war</packaging>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>jakarta.xml.ws</groupId>
+            <artifactId>jakarta.xml.ws-api</artifactId>
+            <version>4.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.xml.ws</groupId>
+            <artifactId>jaxws-rt</artifactId>
+            <version>4.0.1</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.9.0</version>
+                <configuration>
+                    <release>11</release>
+                </configuration>
+            </plugin>
+
+            <plugin>
+
+                <!-- The Eclipse Metro JAX-WS Maven plugin is configured to run the 'wsimport' goal as part of the
+                build. You do not have to install the wsimport commandline tool. The plugin uses wsimport through
+                its own jaxws-tools.jar dependency. -->
+
+                <groupId>com.sun.xml.ws</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>4.0.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+
+                    <!-- wsimport will process the WSDL files under this folder at build time. -->
+                    <wsdlDirectory>${project.basedir}/src/main/resources/</wsdlDirectory>
+
+                    <!-- The generated Service class will load the WSDL at runtime from the root of the classpath
+                    /test.wsdl rather than the default which is to use the http endpoint from the WSDL files
+                    Service element. -->
+                    <wsdlLocation>/hello.wsdl</wsdlLocation>
+
+                    <!-- The extension property tells JAX-WS to support soap v1.2 bindings. -->
+                    <extension>true</extension>
+
+                </configuration>
+                <dependencies>
+
+                    <!-- Force the JAX-WS plugin to use a specific version of jaxws-tools.jar that contains the
+                    wsimport, wsgen, xjc and schemagen tools. -->
+                    <dependency>
+                        <groupId>com.sun.xml.ws</groupId>
+                        <artifactId>jaxws-tools</artifactId>
+                        <version>4.0.1</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>
