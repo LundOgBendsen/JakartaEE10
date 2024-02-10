@@ -76,7 +76,7 @@ public class TaskEJB {
                 break;
             case "DELAYED":
                 task = new DelayedTask(taskName);
-                sExecService.schedule(task, 3, TimeUnit.SECONDS);
+                sExecService.schedule(task, 1, TimeUnit.SECONDS);
                 break;
             case "PERIODIC":
                 if (getPeriodicTasks().contains(taskName) == false) {
@@ -88,8 +88,9 @@ public class TaskEJB {
                 }
                 break;
             case "ASYNC":
-                task = new AsyncTask(taskName);
-                mExecService.submit(task); // we can also call directly task.run(); what is the difference?
+                    task = new AsyncTask(taskName);
+                    mExecService.submit(task);
+                    break;
         }
     }
     
