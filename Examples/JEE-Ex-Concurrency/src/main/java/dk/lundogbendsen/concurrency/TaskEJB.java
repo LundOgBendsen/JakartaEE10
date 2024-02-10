@@ -82,7 +82,7 @@ public class TaskEJB {
                 if (getPeriodicTasks().contains(taskName) == false) {
                     task = new PeriodicTask(taskName);
                     ScheduledFuture<?> fut;
-                    fut = sExecService.scheduleAtFixedRate(task, 0, 8,
+                    fut = sExecService.scheduleAtFixedRate(task, 0, 3,
                             TimeUnit.SECONDS);
                     periodicTasks.put(taskName, fut);
                 }

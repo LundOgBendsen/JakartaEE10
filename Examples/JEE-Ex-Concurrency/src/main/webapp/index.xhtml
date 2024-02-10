@@ -33,7 +33,7 @@
 			<h:outputText value="Task Type"/>
 			<h:selectOneMenu id="tasktype" value="#{taskCreatorBean.taskType}">
 				<f:selectItem itemValue="IMMEDIATE" itemLabel="Immediate"/>
-				<f:selectItem itemValue="PERIODIC" itemLabel="Periodic (8 sec)"/>
+				<f:selectItem itemValue="PERIODIC" itemLabel="Periodic (3 sec)"/>
 				<f:selectItem itemValue="DELAYED" itemLabel="Delayed (3 sec)"/>
 				<f:selectItem itemValue="ASYNC" itemLabel="Async"/>
 			</h:selectOneMenu>
@@ -59,7 +59,7 @@
 		<h:panelGrid id="infopanel" columns="1">
 			<h:outputText value="Task Execution Log"/>
 			<h:inputTextarea id="infolog" value="#{taskCreatorBean.taskMessages}"
-							 rows="12" cols="65" readonly="true"/>
+							 rows="12" cols="120" readonly="true"/>
 			<h:commandButton value="Clean Log" actionListener="#{taskCreatorBean.clearInfoField()}">
 				<f:ajax execute="@this" render="infolog"/>
 			</h:commandButton>
