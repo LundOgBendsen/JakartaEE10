@@ -10,14 +10,9 @@ import java.util.function.Supplier;
 
 /* The tasks just notify the JAX-RS web service in the EJB */
 public class AsyncTask extends Task {
-    @Resource(name = "java:comp/DefaultManagedExecutorService")
-    ManagedExecutorService mExecService;
-    /* Inject the default managed scheduled executor from the app server */
-
     public AsyncTask(String n) {
         super(n, "ASYNC");
     }
-
 
     @Override
     public void run() {

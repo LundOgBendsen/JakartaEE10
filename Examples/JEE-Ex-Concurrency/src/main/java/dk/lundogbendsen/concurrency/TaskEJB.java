@@ -65,8 +65,6 @@ public class TaskEJB {
     @AccessTimeout(value = 60, unit = TimeUnit.SECONDS)
     public void submitTask(String taskName, String type) throws ExecutionException, InterruptedException {
         Task task;
-        Supplier<String> asyncTask = ()->{
-            return "step1";};
         /* Use the managed executor objects from the app server
          * to schedule the tasks */
         switch (type) {
